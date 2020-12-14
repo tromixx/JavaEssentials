@@ -1,77 +1,49 @@
-import java.util.Scanner; // Library that allows us to capture user input
-import java.util.*; // Allows me to check for InputMismatchException
-import java.io.*; // Allows for system input and output through data streams, serialization and the file system
+import java.util.Scanner; 
+import java.util.*; 
+import java.io.*; 
 import java.util.Arrays;
 import org.apache.commons.lang3.ArrayUtils;
-import java.util.LinkedList; // LinkedList Library methods
+import java.util.LinkedList; 
 
 public class Generics
 {
-		// public allows other classes to use this function
-		// static means that only a class can call for this function to execute
-		// void states that this function doesn't return any values after it is done executing
-		// main is required in every Java program. This function is always executed first
-		// Every main function must accept an array of string objects
 	
-		// Class variables must start with static if you want to access them with any other methods in the class
 		static String randomString = "String to print";
 		
-		// Constant variables are defined with the word final
 		static final double PINUM = 3.1415929;
 	
 		public static void main(String[] args)
 		{
-			// System.out is an object that outputs information
-			// println is a function that prints to the screen what ever you provide between braces
-			// "Hello World" is a string of characters. Strings must be surrounded with quotes
-			// Every statement ends with a semicolon ;
+
 			System.out.println("Hello World");
-			
-			// Variable names are case sensitive. Age is not the same as age.
-			// Variables must begin with a letter and contain numbers, _, or $
-			// You must declare all variables before you can use them with a data type
-						
-			/* You can use any variable name except for 
-			 * abstract		continue	for		new		switch	assert	default	goto	package		synchronized
-			 * boolean	do	if	private	this	break	double	implements	protected	throw
-			 * byte	else	import	public	throws	case	enum	instanceof	return	transient
-			 * catch	extends	int	short	try	char	final	interface	static	void
-			 * class	finally	long	strictfp	volatile	const	float	native	super	while
-			 */
-			
-			// This is a declaration statement
-			// integerOne is a local variable to the main function. It can only be accessed in main
+
 			int integerOne = 22; 
 			
 			int integerTwo = integerOne + 1; // This is an expression statement
 			
-			// White space has no meaning in Java, aside from variables and keywords
 			integerTwo =
 					integerOne
 					+ 3;
 			
 			System.out.println(integerTwo);
+
 			
-			// Javas Primitive Types
+			byte bigByte = 127; 
+			short bigShort = 32767; 
+			int bigInt = 2147483647; 
+			long bigLong = 9223372036854775807L; 
 			
-			byte bigByte = 127; // Minimum value -128 Maximum value 127
-			short bigShort = 32767; // Minimum value -32768 Maximum value 32767
-			int bigInt = 2147483647; // Minimum value -2147483648 Maximum value 2147483647
-			long bigLong = 9223372036854775807L; // Minimum value -9223372036854775808L
+			float bigFloat = 3.14F; 
+			double bigDouble = 3.1234567890D; 
+			System.out.println(Float.MAX_VALUE); 
+			System.out.println(Double.MAX_VALUE); 
 			
-			float bigFloat = 3.14F; // You must end a float with an F
-			double bigDouble = 3.1234567890D; // The D is not required with doubles
-			System.out.println(Float.MAX_VALUE); // Float is precise to 6 decimal places
-			System.out.println(Double.MAX_VALUE); // Double is precise to 15 decimal places
+			boolean trueOrFalse = true; 
 			
-			boolean trueOrFalse = true; // Booleans are True or False, not 1 or 0
-			
-			// A char will accept a number or a character surrounded by apostrophes
-			char randomChar = 65; // Character Code for A is 65 Minimum value 0 Maximum value 65535
+			char randomChar = 65; 
 			char anotherChar = 'A';
 			System.out.println(randomChar);
 			
-			// chars can also contain escaped characters
 			char backSpace = '\b';
 			char formFeed = '\f';
 			char lineFeed = '\n';
@@ -81,15 +53,12 @@ public class Generics
 			char singleQuote = '\'';
 			char backSlash = '\\';
 			
-			// A string contains a series of characters
 			String randomString = "I'm just a random";
 			String anotherString = "string";
 			
-			// You combine strings with a +
 			String combinedString = randomString + ' ' + anotherString;
 			System.out.println(combinedString);
 			
-			// How to convert any other type to a string
 			String byteString = Byte.toString(bigByte);
 			String shortString = Short.toString(bigShort);
 			String intString = Integer.toString(bigInt);
@@ -101,35 +70,15 @@ public class Generics
 			
 			System.out.println(charString);
 			
-			// Can't do this because char is a primitive data type
-			// System.out.println(randomChar.getClass());
-			
-			// You can do this because String is an object
 			System.out.println(charString.getClass());
-			
-			// You use casting to convert from one primitive type to another
-			// If you convert from a number that is to big the largest possible value will be 
-			// used instead
+
 			double aDoubleValue = 3.1456789;
 			int doubleToInt = (int) aDoubleValue;
 			System.out.println(doubleToInt);
 			
-			/* To cast to other primitive types just proceed with the conversion to type
-			 * ie (byte) (short) (long) (double) 
-			 * (float) & (boolean) & (char) don't work. 
-			 * (char) stays as a number instead of a character
-			 */
-			
-			// Use parseInt to convert a string into an integer
 			int stringToInt = Integer.parseInt(intString);
 			
-			/* Other parse functions
-			 * parseShort, parseLong, parseByte, parseFloat, parseDouble, parseBoolean
-			 * There is no reason to parse a Character
-			 */
-			
 		}
-		// You must provide a closing brace } so Java knows when the function has ended
 }
 
 
@@ -139,42 +88,21 @@ public class Generics
 
 public class Generics
 {
-	/* static means that only a class can call for this function to execute
-	* Creates a new scanner object named userInput
-	* You create the Scanner object by calling new and passing the Scanner constructor
-	* the input stream to look at (System.in = keyboard input)
-	*/ 
+
 	static Scanner userInput = new Scanner(System.in);
 	
 	public static void main(String[] args)
 	{
-		System.out.print("Your favorite number: "); // Same as println without a newline
+		System.out.print("Your favorite number: ");
 		
-		/* The if statement will only execute the code that lies between {} if the value inside () is true
-		 * userInput.hasNextDouble() returns true if the next value entered is a Double
-		 * There are similar methods for the other data types
-		 * hasNextInt() : Integer input
-		 * hasNextFloat() : Float input
-		 * There are others for Boolean, Byte, Long, and Short
-		 */
 		
 		if (userInput.hasNextInt())
 		{
 		
 			int numberEntered = userInput.nextInt();
-			/* userInput.nextDouble() receives user input and stores it in the variable numberEntered
-			 * You have to use a different method based on the type of input
-			 * nextInt() : Works for Integers
-			 * nextDouble() : Works for Doubles
-			 * nextFloat() : Works for Floats
-			 * nextLine() : Works for Strings
-			 * There are others for Boolean, Byte, Long, and Short
-			 * If the user enters a value of the wrong type the program crashes
-			 */
 		
 			System.out.println("You entered " + numberEntered);
 			
-			// Here I perform basic mathematics calculations
 			int numEnteredTimes2 = numberEntered + numberEntered;
 			System.out.println(numberEntered + " + " + numberEntered + " = " + numEnteredTimes2);
 			
@@ -184,52 +112,39 @@ public class Generics
 			int numEnteredTimesSelf = numberEntered * numberEntered;
 			System.out.println(numberEntered + " * " + numberEntered + " = " + numEnteredTimesSelf);
 			
-			// Without the cast the value wouldn't consider fractions
 			double numEnteredDivide2 = (double)numberEntered / 2; 
 			System.out.println(numberEntered + " / 2 " + " = " + numEnteredDivide2);
 			
-			// % Modulus returns the remainder of a division
 			int numEnteredRemainder = numberEntered % 2;
 			System.out.println(numberEntered + " % 2 " + " = " + numEnteredRemainder);
 			
-			// Shorthand way to add to 2 to a variable and assign the result to self
-			numberEntered += 2; // *= 	/=	%=  Also work
+			numberEntered += 2; 
 			numberEntered -= 2;
 			
-			// Shorthand way to add 1 to a variable
 			numberEntered++;
 			
-			// Shorthand way to subtract 1 from a variable
 			numberEntered--;
 			
-			int numEnteredABS = Math.abs(numberEntered); // Returns the absolute value
+			int numEnteredABS = Math.abs(numberEntered); 
 			
-			// Returns the larger of the two arguments (They must be of the same type)
 			int whichIsBigger = Math.max(5, 7); 
 			
-			// Returns the smaller of the two arguments (They must be of the same type)
 			int whichIsSmaller = Math.min(5, 7);
-			
-			// Returns the square root argument 
+
 			double numSqrt = Math.sqrt(5.23);
-			
-			// Rounds the number provided up
+
 			int numCeiling = (int) Math.ceil(5.23);
 			System.out.println("Ceiling: " + numCeiling);
-			
-			// Rounds the number provided down
+
 			int numFloor = (int) Math.floor(5.23);
 			System.out.println("Floor: " + numFloor);
-			
-			// Rounds the number based on the fraction
+
 			int numRound = (int) Math.round(5.23);
 			System.out.println("Rounded: " + numRound);
-			
-			// Generates random numbers between 0 to 9
+
 			int randomNumber = (int) (Math.random() * 10); 
 			System.out.println("A random number " + randomNumber);
-			
-		// If the above condition is false, the code following else is executed	
+
 		} else {
 			System.out.println("Sorry you must enter an integer");
 		}
@@ -245,73 +160,44 @@ public class Generics {
 	
 	public static void main(String[] args)
 	{
-		// Creates a random number between 0 and 50
 		int randomNumber = (int) (Math.random() * 50);
-		
-		/* Relational Operators: 
-		 * Java has 6 relational operators
-		 * > : Greater Than
-		 * < : Less Than
-		 * == : Equal To
-		 * != : Not Equal To
-		 * >= : Greater Than Or Equal To
-		 * <= : Less Than Or Equal To
-		 */
-		
-		// If randomNumber is less than 25, execute the code between {} and then stop checking
+	
 		if (randomNumber < 25)
 		{
 			System.out.println("The random number is less than 25");
 		}
-		
-		// If randomNumber wasn't less than 25, then check if it's greater than it. If so, execute the code between {} and then stop checking
+
 		else if (randomNumber > 25)
 		{
 			System.out.println("The random number is greater than 25");
 		}
 		
-		// Checks if randomNumber equals 25
 		else if (randomNumber == 25)
 		{
 			System.out.println("The random number is equal to 25");
 		}
-		
-		// Checks if randomNumber is not equal to 25
+
 		else if (randomNumber != 15)
 		{
 			System.out.println("The random number is not equal to 15");
 		}
-		
-		// Checks if randomNumber is less than or equal to 25
+
 		else if (randomNumber <= 25)
 		{
 			System.out.println("The random number is less than or equal to 25");
 		}
-		
-		// Checks if randomNumber is greater than or equal to 25
+
 		else if (randomNumber >= 25)
 		{
 			System.out.println("The random number is greater than or equal to 25");
 		}
 		
-		// If none of the above were correct print out the random number
 		else 
 		{
 			System.out.println("The random number is " + randomNumber);
 		}
 		
-		// Prints out the random number
 		System.out.println("The random number is " + randomNumber);
-		
-		/* Logical Operators:
-		 * Java has 6 logical operators
-		 * ! : Converts the boolean value to its right to its opposite form ie. true to false
-		 * & : Returns true if boolean value on the right and left are both true (Always evaluates both boolean values)
-		 * && : Returns true if boolean value on the right and left are both true (Stops evaluating after first false)
-		 * | : Returns true if either boolean value on the right or left are true (Always evaluates both boolean values)
-		 * || : Returns true if either boolean value on the right or left are true (Stops evaluating after first true)
-		 * ^ : Returns true if there is 1 true and 1 false boolean value on the right or left
-		 */
 		
 		if (!(false))
 		{
@@ -324,14 +210,10 @@ public class Generics {
 			System.out.println("\nBoth are true");
 		}
 		
-		// There is also a & logical operator it checks the second boolean result even if the first comes back false
-		
 		if ((true) || (true))
 		{
 			System.out.println("\nAt least 1 are true");
 		}
-		
-		// There is also a | logical operator it checks the second boolean result even if the first comes back true
 		
 		if ((true) ^ (false))
 		{
@@ -340,28 +222,18 @@ public class Generics {
 		
 		int valueOne = 1;
 		int valueTwo = 2;
-		
-		// The Conditional or Ternary Operator assigns one or another value based on a condition
-		// If true valueOne is assigned to biggestValue. If not valueTwo is assigned
+
 		int biggestValue = (valueOne > valueTwo) ? valueOne : valueTwo;
 		
 		System.out.println(biggestValue + " is the biggest\n");
 		
 		char theGrade = 'B';
-		
-		/* When you have a limited number of possible values a switch statement makes sense 
-		 * The switch statement checks the value of theGrade to the values that follow case
-		 * If it matches it executes the code between {} and then break ends the switch statement
-		 * default code is executed if there are no matches
-		 * You are not required to use the break or default statements
-		 * The expression must be an int, short, byte, or char
-		 */
 		switch (theGrade)
 		{
 		case 'A':
 			System.out.println("Great Job");
-			break; // Ends the switch statement
-		case 'b': // You can use multiple case statements in a row
+			break;
+		case 'b': 
 		case 'B':
 			System.out.println("Good Job, get an A next time");
 			break;
@@ -390,11 +262,7 @@ public class Generics {
 	
 	public static void main(String[] args)
 	{
-		/*
-		 * The while loop : A while loop executes the code between {} until the 
-		 * condition is no longer true
-		 */
-		// while loops create a loop iterator before the loop begins
+
 		int i = 1;
 		
 		while(i < 20)
@@ -458,13 +326,6 @@ public class Generics {
 			
 		}
 		
-		/* 
-		 * The do while loop : Used when you want to guarantee the code 
-		 * between {} will execute at least once. The code is executed and
-		 * then java checks if it should execute again
-		 */
-		// loop iterator for the do while loop
-		// It must be created before the expression is evaluated below
 		int k = 1;
 		
 		do 
@@ -472,11 +333,7 @@ public class Generics {
 			System.out.println(k);
 			k++;
 		} while (k <= 10); // Counts from 1 to 10
-		
-		/*
-		 * The for loop : Another looping tool in Java
-		 * for( declare iterator; conditional statement; change iterator value)
-		 */
+
 		
 		for (int l=10; l >= 1; l--)
 		{
@@ -502,10 +359,6 @@ public class Generics {
 //SIMPLE FUNCTIONS
 
 public class Generics {
-	// main is a method that contains all of the code to be executed when a program runs
-	
-	// This is a class variable that is available to every method
-	// If you declare a variable in a method it is only accessible in that method (local variable)
 	
 	static double myPI = 3.14159265; 
 	
@@ -520,23 +373,10 @@ public class Generics {
 	public static void main(String[] args)
 	{
 		
-		/* Basic Method
-		 * accessModifier static returnDataType methodName (parameters)
-		 * { Statements }
-		 * Access Modifier: Determines who can execute a method
-		 * static: Used when you want to be able to execute a method that isn't part of a class definition
-		 * Return Data Type: The data type of value returned after a method executes (void if no values are returned)
-		 * Method Name: Must start with a letter, but can include letters, numbers, $, or _
-		 * Parameters / Arguments: Values passed to a method
-		 */
-		
 		System.out.println(addThem(1,2)); // addThem(1,2) will be replaced with the value that method returns
 		
 		// Demonstrating passing by value
 		int d = 5;
-		
-		// Changes to the variable d in tryToChange don't effect its value globally
-		// We are passing the value of d to tryToChange and not the variable
 		
 		tryToChange(d);
 		System.out.println("Static Variable d = "+ d);
@@ -567,10 +407,6 @@ public class Generics {
 		
 	}
 	
-	// Adds the two numbers sent and returns the solution
-	// public is the access modifier and means anyone can execute this method
-	// Java Methods can return any primitive data type, or reference to an object (More on that later)
-	
 	public static int addThem(int a, int b)
 	{
 		double smallPI = 3.140; // This variable is local to the addThem function
@@ -581,15 +417,10 @@ public class Generics {
 		
 		int c = a + b;
 		
-		// return returns a value that replaces the call to this method
-		// It must be an int since you defined this method returns ints above
 		
 		return c; 
 	}
 	
-	// When you define an attribute / parameter you must define its type
-	// That's why you can't type tryToChange(d)
-	// Because this function doesn't return a value return type is void
 	
 	public static void tryToChange(int d)
 	{
@@ -618,77 +449,6 @@ public class Generics {
 	}
 	
 }
-
-
-		/* An exception object is created when an error occurs
-		 * It tells you what error occurred
-		 * Here are many of the java exceptions
-		 * 
-		 * java.lang.RuntimeException : exceptions that can be thrown during the normal 
-		 * operation of the Java Virtual Machine. These exceptions are your responsibility 
-		 * as a programmer
-		 * 
-		 * ArithmeticException, ArrayStoreException, BufferOverflowException, 
-		 * BufferUnderflowException, CannotRedoException, CannotUndoException, 
-		 * ClassCastException, CMMException, ConcurrentModificationException, 
-		 * DOMException, EmptyStackException, IllegalArgumentException, 
-		 * IllegalMonitorStateException, IllegalPathStateException, 
-		 * IllegalStateException, ImagingOpException, IndexOutOfBoundsException, 
-		 * MissingResourceException, NegativeArraySizeException, NoSuchElementException, 
-		 * NullPointerException, ProfileDataException, ProviderException, 
-		 * RasterFormatException, SecurityException, SystemException, 
-		 * UndeclaredThrowableException, UnmodifiableSetException, 
-		 * UnsupportedOperationException
-		 * 
-		 * java.lang.Exception : exceptions that are checked for by the java compiler
-		 * 
-		 * AclNotFoundException, ActivationException, AlreadyBoundException, 
-		 * ApplicationException, AWTException, BackingStoreException, 
-		 * BadAttributeValueExpException, BadBinaryOpValueExpException, 
-		 * BadLocationException, BadStringOperationException, 
-		 * BrokenBarrierException, CertificateException, ClassNotFoundException, 
-		 * CloneNotSupportedException, DataFormatException, 
-		 * DatatypeConfigurationException, DestroyFailedException, 
-		 * ExecutionException, ExpandVetoException, FontFormatException, 
-		 * GeneralSecurityException, GSSException, IllegalAccessException, 
-		 * IllegalClassFormatException, InstantiationException, 
-		 * InterruptedException, IntrospectionException, 
-		 * InvalidApplicationException, InvalidMidiDataException, 
-		 * InvalidPreferencesFormatException, InvalidTargetObjectTypeException, 
-		 * InvocationTargetException, IOException, JAXBException, JMException, 
-		 * KeySelectorException, LastOwnerException, LineUnavailableException, 
-		 * MarshalException, MidiUnavailableException, MimeTypeParseException, 
-		 * MimeTypeParseException, NamingException, NoninvertibleTransformException, 
-		 * NoSuchFieldException, NoSuchMethodException, NotBoundException, 
-		 * NotOwnerException, ParseException, ParserConfigurationException, 
-		 * PrinterException, PrintException, PrivilegedActionException, 
-		 * PropertyVetoException, RefreshFailedException, RemarshalException, 
-		 * RuntimeException, SAXException, ScriptException, ServerNotActiveException, 
-		 * SOAPException, SQLException, TimeoutException, TooManyListenersException, 
-		 * TransformerException, TransformException, UnmodifiableClassException, 
-		 * UnsupportedAudioFileException, UnsupportedCallbackException, 
-		 * UnsupportedFlavorException, UnsupportedLookAndFeelException, 
-		 * URIReferenceException, URISyntaxException, UserException, XAException, 
-		 * XMLParseException, XMLSignatureException, XMLStreamException, XPathException
-		 */
-
-		/* Common Exceptions
-		 * ArithmeticException: An arithmetic operation occurs with no answer 
-		 * (Division by Zero)
-		 * 
-		 * ClassNotFoundException: A class is called for that doesn't exist
-		 * 
-		 * IllegalArgumentException: A method has been passed an illegal argument
-		 * 
-		 * IndexOutOfBoundsException: Thrown when an index for an array, string is
-		 * called for, but doesn't exist
-		 * 
-		 * InputMismatchException: (Part of NoSuchElementException) User enters the 
-		 * wrong data type into a Scanner method
-		 * 
-		 * IOException: An I/O operation failed
-		 */
-
 
 //TRY CATCH
 
@@ -757,31 +517,10 @@ public class Generics {
 		
 	}
 	
-	/* If you prefer to throw an exception to the calling method you use throw
-	 * public static void getAFile(String fileName) throws IOException, FileNotFoundException
-	 * {
-	 * 		FileInputStream file = new FileInputStream(fileName);
-	 * }
-	 * 
-	 * If main called this method, main would have to handle the exception
-	 * 
-	 * public static void main(String[] args) {
-	 * 		try {
-	 * 			getAFile("./somestuff.txt");
-	 * 		}
-	 * 		catch(IOException e) {
-	 * 			System.out.println("An unknown IO Error Occured");
-	 * 		}
-	 */
-	
 	public static void getAFile(String fileName)
 	{
 		try 
 		{
-		/* If I tried to do this without providing for an exception
-		* I'd get the error Unhandled Exception Type FileNotFoundException
-		* A checked exception is an exception the compiler forces you to protect against
-		*/ 
 		FileInputStream file = new FileInputStream(fileName); 
 		}
 		
@@ -795,16 +534,6 @@ public class Generics {
 		{
 			System.out.println("An unknown IO Error Occured");
 		}
-		
-		/* To ignore an exception do this
-		 * catch (ClassNotFoundException e)
-		 * {}
-		 */
-		
-		/* Java 7 allows you to catch multiple exceptions at once
-		 * catch (FileNotFoundException | IOException e)
-		 * {}
-		 */
 		
 		// This will catch any exception (This should always be last)
 		catch (Exception e)
@@ -863,11 +592,6 @@ public class Generics{
 		return health;
 	}
 	
-	// You can create multiple versions using the same method name
-	// Now setHealth can except an attack that contains decimals
-	// When overloading a method you can't just change the return type
-	// Focus on creating methods that except different parameters
-	
 	public void setHealth(int decreaseHealth)
 	{
 		health = health - decreaseHealth;
@@ -887,48 +611,20 @@ public class Generics{
 		}
 	}
 	
-	/* The Constructor
-	 * Code that is executed when an object is created from this class definition
-	 * The method name is the same as the class
-	 * The constructor is only executed once per object
-	 * The constructor can't return a value
-	 */
 	
 	public Monster(int health, int attack, int movement)
 	{
 		this.health = health;
 		this.attack = attack;
 		this.movement = movement;
-		/* If the attributes had the same names as the class health, attack, movement
-		 * You could refer to the objects fields by proceeding them with this
-		 * this.health = health;
-		 * this.attack = attack;
-		 * objectFieldName = attributeFieldName;
-		 */
 		
 	}
 	
-	// You can overload constructors like any other method
-	// The following constructor is the one provided by default if you don't create any other constructors
-	// Default Constructor
 	
 	public Monster()
 	{
 		
 	}
-	
-	/* You can use the this keyword to call other constructors
-	 * public LessonSeven(int newHealth)
-	 * {
-	 * 		health = newHealth;
-	 * }
-	 * 
-	 * public LessonSeven(int newHealth, int newAttack)
-	 * {
-	 * 		this(newHealth); // Any calls to another constructor must occur on the first line
-	 * 		attack = newAttack;
-	 * }
-	 */
 	
 }
 
@@ -971,17 +667,6 @@ public class Generics {
 public class LessonNine {
 	
 	public static void main(String[] args){
-		
-		// An array is a variable that can hold a bunch of values
-		// Think of an array as a big box filled with other boxes
-		// Each box has a number on it called an index that you use 
-		// to access its specific value
-		
-		/* Array Rules
-		 * An array can contain only values of the same type
-		 * An arrays size can't be changed once it is set
-		 * An array is an object
-		 */
 		
 		// You declare an array with the dataType[] arrayName
 		int[] randomArray; 
@@ -1237,11 +922,6 @@ public class Generics{
 		return alive;
 	}
 	
-	// You can create multiple versions using the same method name
-	// Now setHealth can except an attack that contains decimals
-	// When overloading a method you can't just change the return type
-	// Focus on creating methods that except different parameters
-	
 	public void setHealth(int decreaseHealth)
 	{
 		health = health - decreaseHealth;
@@ -1380,13 +1060,6 @@ public class Generics{
 		}
 	}
 	
-	
-	/* The Constructor
-	 * Code that is executed when an object is created from this class definition
-	 * The method name is the same as the class
-	 * The constructor is only executed once per object
-	 * The constructor can't return a value
-	 */
 	
 	public MonsterTwo(int health, int attack, int movement, String name)
 	{
@@ -1617,117 +1290,65 @@ public class Generics {
 		names.remove(4);
 		names.remove("Joshua Smith");
 		
-		// removeFirst() removes the first element
-		// removeLast() removes the last element
-		// removeFirstOccurrence(Object) removes the  
-		// first Object that matches what you passed
-		
-		// You can use the enhanced for to print them out
 		for(String name : names)
 		{
 			System.out.println(name);
 		}
 		
-		/* OUTPUT
-		 * Noah Peeters
-		 * Paul Newman
-		 * Ali Syed
-		 */
 		
 		// You can retrieve values with get()
 		System.out.println("\nFirst Index: " + names.get(0));
-		
-		/* OUTPUT
-		 * First Index: Noah Peeters
-		 */
-		
+
 		// Retrieve the first value with getFirst()
 		System.out.println("\nFirst Index: " + names.getFirst());
-		
-		/* OUTPUT
-		 * First Index: Noah Peeters
-		 */
-		
+
 		// Retrieve the first value with getFirst()
 		System.out.println("\nLast Index: " + names.getLast());
 		
-		/* OUTPUT
-		 * Last Index: Ali Syed
-		 */
-		
+
 		LinkedList<String> nameCopy = new LinkedList<String>(names);
 		
 		// When you print out the LinkedList itself the toString
 		// method is called
 		System.out.println("\nnameCopy: " + nameCopy);
-		
-		/* OUTPUT
-		 * nameCopy: [Noah Peeters, Paul Newman, Ali Syed]
-		 */
-		
+
 		// You can check if an object is in the list with contains()
 		if(names.contains("Noah Peeters"))
 		{
 			System.out.println("\nNoahs Here");
 		}
 		
-		/* OUTPUT
-		 * Noahs Here
-		 */
-		
+
 		// You can check if everything in one list is in another
 		if(names.containsAll(nameCopy))
 		{
 			System.out.println("\nCollections are the same");
 		}
 		
-		/* OUTPUT
-		 * Collections are the same
-		 */
-		
+
 		// Return the index for an object with indexOf
 		System.out.println("\nIndex of Ali is: " + names.indexOf("Ali Syed"));
-		
-		/* OUTPUT
-		 * Index of Ali is: 2
-		 */
-		
+
 		// Check if a list is empty with isEmpty()
 		System.out.println("List Empty: " + names.isEmpty());
 		
-		/* OUTPUT
-		 * List Empty: false
-		 */
-		
+
 		// Get the number of items in the list with size
 		System.out.println("How many values: " + names.size());
-		
-		/* OUTPUT
-		 * How many values: 3
-		 */
-		
+
 		// peek() retrieves the first element, but doesn't throw an error 
 		// if there is no element to retrieve
 		System.out.println("Look without error: " + names.peek());
 		
-		/* OUTPUT
-		 * Look without error: Noah Peeters
-		 */
 		
 		// poll() returns the first value and deletes it from the list
 		System.out.println("Remove first element: " + nameCopy.poll());
 		
-		/* OUTPUT
-		 * Remove first element: Noah Peeters
-		 */
-		
+
 		// poll() returns the last value and deletes it from the list
 		System.out.println("Remove last element: " + nameCopy.pollLast());
 		
-		/* OUTPUT
-		 * Remove last element: Ali Syed
-		 */
-		
+
 		// push puts a new element on the front of the list
 		nameCopy.push("Noah Peeters");
 		
@@ -1735,11 +1356,7 @@ public class Generics {
 		nameCopy.pop();
 		
 		System.out.println("\nnameCopy: " + nameCopy);
-		
-		/* OUTPUT
-		 * nameCopy: [Paul Newman]
-		 */
-		
+
 		// Create a new array to hold values from the Linked List
 		Object[] nameArray = new Object[4];
 		
@@ -1748,10 +1365,6 @@ public class Generics {
 		
 		// toString converts items in the array into a String
 		System.out.println(Arrays.toString(nameArray));
-		
-		/* OUTPUT
-		 * [Noah Peeters, Paul Newman, Ali Syed]
-		 */
 		
 		// clear() deletes everything in the Linked List
 		names.clear();
@@ -1776,14 +1389,6 @@ public class Generics {
 		// Always surround Strings with quotes " " and not Apostrophes ' '
 		String gotToQuote ="He said, \"I'm here\"";
 		
-		/* Other common Escape Codes
-		 * \n : Newline
-		 * \b : Backspace
-		 * \' : Apostrophe
-		 * \" : Quote
-		 * \\ : Backslash
-		 */
-		
 		// You combine Strings with a +
 		System.out.println(randomString + " " + gotToQuote);
 		
@@ -1791,20 +1396,6 @@ public class Generics {
 		int numTwo = 2;
 		System.out.println(randomString + " " + numTwo);
 		
-		/* You convert primitive types to a string with toString
-		 * String byteString = Byte.toString(bigByte);
-		 * String shortString = Short.toString(bigByte);
-		 * String intString = Integer.toString(bigInt);
-		 * String longString = Long.toString(bigByte);
-		 * String floatString = Float.toString(bigByte);
-		 * String doubleString = Double.toString(bigByte);
-		 * String booleanString = Boolean.toString(bigByte);
-		 * 
-		 * You convert from String to primitives with parse
-		 * int stringToInt = Integer.parseInt(intString);
-		 * parseSort, parseLong, parseByte, parseDouble, 
-		 * parseBoolean, parseFloat
-		 */
 		
 		// You compare strings with equals or equalsIgnoreCase
 		String uppercaseStr = "BIG";
@@ -1825,11 +1416,7 @@ public class Generics {
 		
 		// charAt returns the character in a string
 		System.out.println("2nd Character: " + letters.charAt(1));
-		
-		// compareTo returns 0 if strings are equal
-		// Returns a negative number if letters comes before moreLetters
-		// Returns a positive number if letters comes after moreLetters
-		// There is also a compareToIgnoreCase()
+
 		System.out.println(letters.compareTo(moreLetters));
 		
 		// contains() returns a boolean depending on whether the 
@@ -1856,11 +1443,7 @@ public class Generics {
 		// replace() replaces every occurrence of the first String with
 		// the second String you provide
 		System.out.println(letters.replace("abc", "xy"));
-		
-		// You can create an array of Strings with split()
-		// You define how to break up the String using a delimiter
-		// If you had 123,456 and used the delimiter "," you would
-		// create the array [123,456]
+
 		String[] letterArray = letters.split("");
 		
 		// toString() converts the array into a String to print it 
@@ -1885,12 +1468,6 @@ public class Generics {
 		// trim() gets rid of leading and trailing white space
 		System.out.println(randString.trim());
 		
-		// A String is immutable, which means every time you change 
-		// a String a new version is created in memory.
-		// If you manipulate Strings allot use a StringBuilder
-		
-		// How to create a StringBuilder
-		// It has a fixed space in memory
 		StringBuilder randSB = new StringBuilder("A random string");
 		
 		// append() adds anything to the end of a SB
