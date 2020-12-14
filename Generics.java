@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.apache.commons.lang3.ArrayUtils;
 import java.util.LinkedList; // LinkedList Library methods
 
-public class HelloWorld
+public class Generics
 {
 		// public allows other classes to use this function
 		// static means that only a class can call for this function to execute
@@ -137,7 +137,7 @@ public class HelloWorld
 
 //SCANNERS
 
-public class LessonTwo
+public class Generics
 {
 	/* static means that only a class can call for this function to execute
 	* Creates a new scanner object named userInput
@@ -241,7 +241,7 @@ public class LessonTwo
 
 //FUNCTIONS
 
-public class LessonThree {
+public class Generics {
 	
 	public static void main(String[] args)
 	{
@@ -383,7 +383,7 @@ public class LessonThree {
 
 //MORE FUNCTIONS
 
-public class LessonFour {
+public class Generics {
 	
 	// Creates a Scanner object that monitors keyboard input
 	static Scanner userInput = new Scanner(System.in);
@@ -501,7 +501,7 @@ public class LessonFour {
 
 //SIMPLE FUNCTIONS
 
-public class LessonFive {
+public class Generics {
 	// main is a method that contains all of the code to be executed when a program runs
 	
 	// This is a class variable that is available to every method
@@ -692,7 +692,7 @@ public class LessonFive {
 
 //TRY CATCH
 
-public class LessonSix {
+public class Generics {
 	
 	// Creates a Scanner object that monitors keyboard input
 	static Scanner userInput = new Scanner(System.in);
@@ -826,7 +826,7 @@ public class LessonSix {
 
 // MONSTER
 
-public class Monster{
+public class Generics{
 	
 	// Class Variables or Fields
 	// You declare constants with final
@@ -936,7 +936,7 @@ public class Monster{
 
 // GAME
 
-public class LessonEight {
+public class Generics {
 	
 	public static void main(String[] args)
 	{
@@ -1157,7 +1157,7 @@ public class LessonNine {
 
 // BASSIC CLASS DEF
 
-public class MonsterTwo{
+public class Generics{
 	// Creates a multidimensional array of chars
 	static char[][] battleBoard = new char[10][10];
 	
@@ -1454,7 +1454,7 @@ public static void main(String[] args)
 
 //COLLECTION CL
 
-public class LessonEleven {
+public class Generics {
 	
 	public static void main(String[] args)
 	{
@@ -1586,7 +1586,7 @@ public class LessonEleven {
 
 // LinkedList
 
-public class LessonTwelve {
+public class Generics {
 	
 	public static void main(String[] args){
 		
@@ -1765,7 +1765,7 @@ public class LessonTwelve {
 
 // String class
 
-public class LessonThirteen {
+public class Generics {
 	
 	public static void main(String[] args){
 		
